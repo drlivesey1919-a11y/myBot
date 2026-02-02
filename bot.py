@@ -121,9 +121,9 @@ def show_info(message):
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    if message.chat.id != ADMIN_CHAT_ID:
-        bot.reply_to(message, "Извини, этот бот только для владельца.")
-        return
+    #if message.chat.id != ADMIN_CHAT_ID:
+    #    bot.reply_to(message, "Извини, этот бот только для владельца.")
+    #    return
 
     text = (
         "Привет! Я бот-напоминалка о пополнениях счетов.\n\n"
@@ -211,4 +211,5 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Критическая ошибка бота: {e}")
         time.sleep(30)
+
         os._exit(1)
